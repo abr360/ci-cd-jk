@@ -1,5 +1,4 @@
 package com.abr360.calculation;
-// CalculatorController.java
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class CalculatorController {
 
-    @GetMapping("/calculator")
+    @GetMapping("/calc/calculator") // Fix the mapping to match the requested resource
     public String showCalculatorForm() {
-        return "calculator";
+        return "calculator"; // Assuming "calculator" is the name of your view file
     }
 
-    @PostMapping("/calculate")
+    @PostMapping("/calc/calculate") // Fix the mapping to match the requested resource
     public String calculate(@RequestParam double num1, @RequestParam double num2, @RequestParam String operation, Model model) {
         double result;
         switch (operation) {
@@ -40,6 +39,6 @@ public class CalculatorController {
         }
 
         model.addAttribute("result", result);
-        return "calculator";
+        return "calculator"; // Assuming "calculator" is the name of your view file
     }
 }
