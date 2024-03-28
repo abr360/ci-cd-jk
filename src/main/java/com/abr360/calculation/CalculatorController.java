@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class CalculatorController {
 
-    @GetMapping("/")
+    @GetMapping("/calculator")
     public String showCalculatorForm() {
         return "calculator";
     }
