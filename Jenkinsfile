@@ -7,7 +7,7 @@ pipeline {
  stage('Build') {
  steps {
  script {
-  bat "mvn clean package"
+ sh "mvn clean package"
  }
  }
  post {
@@ -20,7 +20,7 @@ pipeline {
  stage('Deploy to Tomcat') {
  steps {
  script {
-deploy adapters: [tomcat9(credentialsId: '96f1b69f-3e45-4f65-8cf8-d4dfcea7c9d5', path: '', url: 'http://localhost:8080/')], contextPath: 'calc', war: '**/*.war'
+deploy adapters: [tomcat9(credentialsId: '2feb930a-4c45-4f78-bd7c-e29f7f5c4f89', path: '', url: 'http://20.244.45.6:9090/')], contextPath: null, war: '**/*.war'
  }
  }
  }
